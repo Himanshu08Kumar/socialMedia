@@ -30,9 +30,9 @@ const Login = () => {
       });
 
       if (response.ok) {
-        console.log('Login successful');
+        alert('Login successful');
       } else {
-        console.error('Login failed');
+       alert('Login failed');
       }
     } catch (error) {
       console.error('Error:', error);

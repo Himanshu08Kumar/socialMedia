@@ -64,21 +64,21 @@ body {
 
   #link {
     text-decoration: none;
-    color: #007bff; /* Set a primary color for the link */
-    font-weight: bold; /* Make the text bold */
-    font-size: 16px; /* Adjust the font size */
-    transition: color 0.3s ease, transform 0.3s ease; /* Add a smooth transition effect */
+    color: #007bff; 
+    font-weight: bold; 
+    font-size: 16px; 
+    transition: color 0.3s ease, transform 0.3s ease;
   }
   
   #link:hover {
-    color: #0056b3; /* Change the color on hover */
-    text-decoration: underline; /* Add an underline on hover */
-    transform: scale(1.05); /* Slightly enlarge the link on hover */
+    color: #0056b3;
+    text-decoration: underline; 
+    transform: scale(1.05); 
   }
   
   #link:active {
-    color: #003366; /* Change color when the link is clicked */
-    transform: scale(0.98); /* Slightly shrink to create a pressed effect */
+    color: #003366; 
+    transform: scale(0.98); 
   }
   
   

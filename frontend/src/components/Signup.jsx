@@ -1,45 +1,44 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './signup.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./signup.css";
 
 const Signup = () => {
-
   const [formData, setFormData] = useState({
-    firstname: '',
-    lastname: '',
-    email: '',
-    password: '',
-    location: '',
-    occupation: ''
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    location: "",
+    occupation: "",
   });
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/auth/register', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3000/auth/register", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        console.log('Registration successful');
+        // alert("Registration successful");
+        window.location.href = "/";
       } else {
-        console.error('Registration failed');
+        alert("Registration failed");
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -56,7 +55,7 @@ const Signup = () => {
           value={formData.firstname}
           onChange={handleChange}
         />
-        
+
         <label htmlFor="lastname">Last Name</label>
         <input
           type="text"
@@ -66,7 +65,7 @@ const Signup = () => {
           value={formData.lastname}
           onChange={handleChange}
         />
-        
+
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -76,7 +75,7 @@ const Signup = () => {
           value={formData.email}
           onChange={handleChange}
         />
-        
+
         <label htmlFor="password">Password</label>
         <input
           type="password"
@@ -86,7 +85,7 @@ const Signup = () => {
           value={formData.password}
           onChange={handleChange}
         />
-        
+
         <label htmlFor="location">Location</label>
         <input
           type="text"
@@ -96,7 +95,7 @@ const Signup = () => {
           value={formData.location}
           onChange={handleChange}
         />
-        
+
         <label htmlFor="occupation">Occupation</label>
         <input
           type="text"
@@ -106,10 +105,13 @@ const Signup = () => {
           value={formData.occupation}
           onChange={handleChange}
         />
-        
+
         <button type="submit">Submit</button>
         <p>
-          Already have an Account? <Link to="/login" id="link">Click Here</Link>
+          Already have an Account?{" "}
+          <Link to="/" id="link">
+            Click Here
+          </Link>
         </p>
       </form>
     </div>
