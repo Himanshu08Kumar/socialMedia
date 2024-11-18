@@ -32,7 +32,6 @@ const Signup = () => {
       });
 
       if (response.ok) {
-        // alert("Registration successful");
         window.location.href = "/";
       } else {
         alert("Registration failed");
