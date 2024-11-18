@@ -5,6 +5,9 @@ import postRoute from "./routes/posts.js";
 import userRoute from "./routes/users.js";
 import dotenv from "dotenv";
 import cors from "cors"; // Import the CORS package
+import { users, posts } from "./data/index.js"
+import User from "./models/User.js";
+import Post from "./models/Post.js";
 
 dotenv.config();
 const app = express();
@@ -27,6 +30,8 @@ app.use('/users', userRoute);
 mongoose.connect(process.env.MONGO_URL)
   .then(() => {
     app.listen(port, () => console.log(`Server is running on port ${port}`));
+    // User.insertMany(users);
+    Post.insertMany(posts);
   })
   .catch((err) => {
     console.log(err);
